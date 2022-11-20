@@ -29,20 +29,7 @@ responseRouter.post('/', async (req: Request, res: Response) => {
       
 
       const { feeling, sentiment, method, reason } = description;
-      // model PollResponse {
-      //   id        String   @id @default(uuid())
-      //   response  String
-      //   feeling   String
-      //   sentiment String
-      //   method    String
-      //   reason    String
-      //   poll      Poll     @relation(fields: [pollId], references: [id])
-      //   pollId    String
-      //   user      User     @relation(fields: [userId], references: [id])
-      //   userId    String
-      //   createdAt DateTime @default(now())
-      //   updatedAt DateTime @updatedAt
-      // }
+      console.log('DESCRIPTON: ', description)
       
       const newResponse = await prisma.pollResponse.create({
           data: {
